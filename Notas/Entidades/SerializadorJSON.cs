@@ -18,7 +18,7 @@ namespace Entidades
         static SerializadorJSON()
         {
             SerializadorJSON<T>.caracterSeparadorDeDirectorios = Path.DirectorySeparatorChar;
-            SerializadorJSON<T>.rutaDirectorioBase = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Archivo/");
+            SerializadorJSON<T>.rutaDirectorioBase = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Archivo/");
         }
 
         /// <summary>
