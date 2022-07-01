@@ -14,10 +14,10 @@ namespace NotasDeEscritorio
     public partial class FrmPassword : Form
     {
         Tema tema;
-        public FrmPassword(Tema tema)
+        public FrmPassword()
         {
             InitializeComponent();
-            this.tema = tema;
+            this.tema = FrmNotas.temaAplicacion;
         }
 
         private void FrmPassword_Load(object sender, EventArgs e)

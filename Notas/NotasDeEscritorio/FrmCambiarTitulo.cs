@@ -15,11 +15,11 @@ namespace NotasDeEscritorio
     {
         private Tema tema;
         private Nota nota;
-        public FrmCambiarTitulo(Nota nota, Tema tema)
+        public FrmCambiarTitulo(Nota nota)
         {
             InitializeComponent();
             this.nota = nota;
-            this.tema = tema;
+            this.tema = FrmNotas.temaAplicacion;
         }
 
         /// <summary>

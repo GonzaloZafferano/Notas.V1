@@ -53,7 +53,6 @@ namespace NotasDeEscritorio
             this.txtTitulo.Location = new System.Drawing.Point(176, 58);
             this.txtTitulo.MaxLength = 30;
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.PlaceholderText = "Título";
             this.txtTitulo.Size = new System.Drawing.Size(374, 30);
             this.txtTitulo.TabIndex = 1;
             // 

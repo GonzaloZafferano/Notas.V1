@@ -14,7 +14,7 @@ namespace NotasDeEscritorio
     public partial class FrmNotas : Form
     {        
         private List<FrmNuevaNota> notasAbiertas;
-        private Tema tema;
+        private static Tema tema;
         private DataGridViewColumn columna;
         private DataGridViewButtonColumn botonEliminar;
 
@@ -22,7 +22,7 @@ namespace NotasDeEscritorio
         {
             InitializeComponent();
 
-            this.tema = tema;
+            FrmNotas.tema = tema;
 
             this.notasAbiertas = new List<FrmNuevaNota>();   
             this.columna = new DataGridViewColumn();
@@ -30,6 +30,14 @@ namespace NotasDeEscritorio
 
             Nota.OnMensajeDeError += this.MensajeError;
             Nota.LeerNotasDeArchivo();
+        }
+
+        public static Tema temaAplicacion
+        {
+            get
+            {
+                return FrmNotas.tema;
+            }
         }
 
         /// <summary>
@@ -171,7 +179,7 @@ namespace NotasDeEscritorio
         /// <param name="nota">Nota a partir de la cual se abrira el formulario.</param>
         private void CargarEventosYAbrirNota(Nota nota)
         {
-            FrmNuevaNota nuevaNota = new FrmNuevaNota(nota, this.tema);
+            FrmNuevaNota nuevaNota = new FrmNuevaNota(nota);
             nuevaNota.OnRefrescarDataGrid += this.RefrescarDataGrid;
             nuevaNota.OnNotaAbierta += this.NotaAbierta;
 
@@ -359,7 +367,7 @@ namespace NotasDeEscritorio
 
         private void passwordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmPassword formularioDePassword = new FrmPassword(this.tema);
+            FrmPassword formularioDePassword = new FrmPassword();
             if(formularioDePassword.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Contraseña activada con exito! Se cerrara la sesion.", "Aviso: Cambio de contraseña exitoso.", MessageBoxButtons.OK, MessageBoxIcon.Information);

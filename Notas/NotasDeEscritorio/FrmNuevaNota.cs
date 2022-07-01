@@ -19,11 +19,11 @@ namespace NotasDeEscritorio
         private Nota nota;
         private Tema tema;
 
-        public FrmNuevaNota(Nota nota, Tema tema)
+        public FrmNuevaNota(Nota nota)
         {
             InitializeComponent();
 
-            this.tema = tema;
+            this.tema = FrmNotas.temaAplicacion;
 
             if (nota != null)
             {
@@ -214,7 +214,7 @@ namespace NotasDeEscritorio
 
         private void cambiarTítuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmCambiarTitulo cambiarTitulo = new FrmCambiarTitulo(this.nota, this.tema);
+            FrmCambiarTitulo cambiarTitulo = new FrmCambiarTitulo(this.nota);
 
             if (cambiarTitulo.ShowDialog() == DialogResult.OK)
             {

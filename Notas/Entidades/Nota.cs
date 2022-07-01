@@ -66,7 +66,7 @@ namespace Entidades
             {
                 if(string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentNullException("Debe indicar un título para la nota.");
+                    throw new NullReferenceException("Debe indicar un título para la nota.");
                 }
                 
                 for(int i = 0; i < Nota.notas.Count; i++)
