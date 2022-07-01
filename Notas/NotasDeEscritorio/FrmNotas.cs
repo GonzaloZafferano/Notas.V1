@@ -343,14 +343,17 @@ namespace NotasDeEscritorio
 
         private void borrarTodasLasNotasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta = MessageBox.Show("¿Desea eliminar todas las nota?", "Aviso: Eliminar todas las notas.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (respuesta == DialogResult.Yes)
+            if(Nota.Notas.Count > 0)
             {
-                this.CerrarTodasLasNotasAbiertas();
-                Nota.EliminarTodasLasNotas();
+                DialogResult respuesta = MessageBox.Show("¿Desea eliminar todas las notas?", "Aviso: Eliminar todas las notas.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                this.RefrescarDataGrid();
+                if (respuesta == DialogResult.Yes)
+                {
+                    this.CerrarTodasLasNotasAbiertas();
+                    Nota.EliminarTodasLasNotas();
+
+                    this.RefrescarDataGrid();
+                }
             }
         }
 
