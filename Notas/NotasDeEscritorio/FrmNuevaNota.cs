@@ -268,8 +268,8 @@ namespace NotasDeEscritorio
             {
                 this.OnNotaAbierta.Invoke(this, true);
             }
-
-            this.nota.SeGuardoNotaAbierta = false;
+                        
+            this.nota.SeGuardoNotaAbierta = false;            
         }
 
         private void FrmNuevaNota_Deactivate(object sender, EventArgs e)

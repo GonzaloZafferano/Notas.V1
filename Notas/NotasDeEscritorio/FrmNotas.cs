@@ -401,6 +401,8 @@ namespace NotasDeEscritorio
             {
                 MessageBox.Show("Contraseña activada con exito! Se cerrara la sesion.", "Aviso: Cambio de contraseña exitoso.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                this.CerrarTodasLasNotasAbiertas();
+
                 this.DialogResult = DialogResult.OK;
             }
         }

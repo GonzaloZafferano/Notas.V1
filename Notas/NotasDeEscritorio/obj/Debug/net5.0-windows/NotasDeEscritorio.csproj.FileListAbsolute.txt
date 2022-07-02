@@ -24,32 +24,6 @@ C:\Users\GONZALO\Desktop\NotasDeEscritorio\NotasDeEscritorio\obj\Debug\net5.0-wi
 C:\Users\GONZALO\Desktop\NotasDeEscritorio\NotasDeEscritorio\obj\Debug\net5.0-windows\ref\NotasDeEscritorio.dll
 C:\Users\GONZALO\Desktop\NotasDeEscritorio\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.pdb
 C:\Users\GONZALO\Desktop\NotasDeEscritorio\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.genruntimeconfig.cache
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.exe
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.deps.json
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.runtimeconfig.json
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.runtimeconfig.dev.json
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.dll
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\ref\NotasDeEscritorio.dll
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.pdb
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\Entidades.dll
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\Entidades.pdb
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.csproj.AssemblyReference.cache
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.FrmCambiarTitulo.resources
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.FrmLog.resources
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.FrmNotas.resources
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.FrmNuevaNota.resources
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.FrmPassword.resources
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.Properties.Resources.resources
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.csproj.GenerateResource.cache
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.AssemblyInfoInputs.cache
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.AssemblyInfo.cs
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.csproj.CoreCompileInputs.cache
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.csproj.CopyComplete
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.dll
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\ref\NotasDeEscritorio.dll
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.pdb
-C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.genruntimeconfig.cache
 C:\Users\GONZALO\Desktop\Nueva carpeta (5)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.exe
 C:\Users\GONZALO\Desktop\Nueva carpeta (5)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.deps.json
 C:\Users\GONZALO\Desktop\Nueva carpeta (5)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.runtimeconfig.json
@@ -102,3 +76,29 @@ C:\Users\GONZALO\Desktop\Nueva carpeta\Notas.V1\Notas\NotasDeEscritorio\obj\Debu
 C:\Users\GONZALO\Desktop\Nueva carpeta\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\ref\NotasDeEscritorio.dll
 C:\Users\GONZALO\Desktop\Nueva carpeta\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.pdb
 C:\Users\GONZALO\Desktop\Nueva carpeta\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.genruntimeconfig.cache
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.exe
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.deps.json
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.runtimeconfig.json
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.runtimeconfig.dev.json
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.dll
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\ref\NotasDeEscritorio.dll
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\NotasDeEscritorio.pdb
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\Entidades.dll
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\bin\Debug\net5.0-windows\Entidades.pdb
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.csproj.AssemblyReference.cache
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.FrmCambiarTitulo.resources
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.FrmLog.resources
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.FrmNotas.resources
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.FrmNuevaNota.resources
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.FrmPassword.resources
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.Properties.Resources.resources
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.csproj.GenerateResource.cache
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.AssemblyInfoInputs.cache
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.AssemblyInfo.cs
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.csproj.CoreCompileInputs.cache
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.csproj.CopyComplete
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.dll
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\ref\NotasDeEscritorio.dll
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.pdb
+C:\Users\GONZALO\Desktop\Nueva carpeta (2)\Notas.V1\Notas\NotasDeEscritorio\obj\Debug\net5.0-windows\NotasDeEscritorio.genruntimeconfig.cache

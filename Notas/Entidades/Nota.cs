@@ -230,7 +230,7 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Elimina todas las notas.
+        /// Elimina todas las notas, y guarda el archivo.
         /// </summary>
         public static void EliminarTodasLasNotas()
         {
