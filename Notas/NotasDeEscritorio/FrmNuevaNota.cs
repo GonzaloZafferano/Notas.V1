@@ -227,6 +227,8 @@ namespace NotasDeEscritorio
             {
                 this.Text = this.nota.TituloDeNota;
 
+                this.nota.GuardarNotaAlFinalDeListaDeNotas();
+
                 if(this.OnRefrescarDataGrid != null)
                 {
                     this.OnRefrescarDataGrid.Invoke();
