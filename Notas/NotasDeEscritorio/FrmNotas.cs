@@ -24,7 +24,7 @@ namespace NotasDeEscritorio
 
             FrmNotas.tema = tema;
 
-            this.notasAbiertas = new List<FrmNuevaNota>();   
+            this.notasAbiertas = new List<FrmNuevaNota>();
             this.columna = new DataGridViewColumn();
             this.botonEliminar = new DataGridViewButtonColumn();
 
@@ -47,7 +47,7 @@ namespace NotasDeEscritorio
         {     
             BindingList<Nota> notas = new BindingList<Nota>();
 
-            for(int i = 0; i < Nota.Notas.Count; i++)
+            for(int i = Nota.Notas.Count -1; i >= 0 ; i--)
             {
                 notas.Add(Nota.Notas[i]);
             }
@@ -268,9 +268,12 @@ namespace NotasDeEscritorio
                 {
                     Nota nota = this.dtgvNotas.Rows[e.RowIndex].DataBoundItem as Nota;
 
-                    if (nota is not null && !this.EstaNotaAbierta(nota.IdDeNota) &&
-                        ((DataGridView)sender).Columns[e.ColumnIndex] is DataGridViewColumn)
+                    if (nota is not null && ((DataGridView)sender).Columns[e.ColumnIndex] is DataGridViewColumn)
                     {
+                        this.CerrarNotaAbiertaPorIdentificador(nota.IdDeNota);
+
+                        nota.GuardarNotaAlFinalDeListaDeNotas();
+
                         this.CargarEventosYAbrirNota(nota);
                     }
                 }

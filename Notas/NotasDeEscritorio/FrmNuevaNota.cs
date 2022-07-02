@@ -71,6 +71,11 @@ namespace NotasDeEscritorio
             this.lblCantidadCaracteres.Text = this.nota.Texto.Length.ToString();
 
             Nota.GuardarNotaEnListaDeNotas(this.nota);
+
+            if (this.OnRefrescarDataGrid != null)
+            {
+                this.OnRefrescarDataGrid.Invoke();
+            }
         }
 
         /// <summary>
@@ -259,16 +264,11 @@ namespace NotasDeEscritorio
 
         private void NuevaNota_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (this.OnRefrescarDataGrid != null)
-            {
-                this.OnRefrescarDataGrid.Invoke();
-            }
-
             if (this.OnNotaAbierta != null)
             {
                 this.OnNotaAbierta.Invoke(this, true);
             }
-                        
+
             this.nota.SeGuardoNotaAbierta = false;            
         }
 

@@ -218,7 +218,9 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Guarda una nota (no guarda null ni duplicados) en la lista de notas.
+        /// Guarda una nota (no null ni duplicada) en la lista de notas. 
+        /// Si la nota ya existe en la lista, no hace nada.
+        /// Este metodo No guarda cambios en archivos.
         /// </summary>
         /// <param name="nota">Nota a guardar.</param>
         public static void GuardarNotaEnListaDeNotas(Nota nota)
@@ -227,6 +229,18 @@ namespace Entidades
             {
                 Nota.notas.Add(nota);
             }
+        }
+
+        /// <summary>
+        /// Guarda una nota al final de la lista de notas (no guarda null). 
+        /// Si la nota ya existe en la lista, la borra y la agrega nuevamente pero al final.
+        /// Este metodo No guarda cambios en archivos.
+        /// </summary>
+        public void GuardarNotaAlFinalDeListaDeNotas()
+        {
+            this.EliminarNota();
+
+            Nota.notas.Add(this);           
         }
 
         /// <summary>
@@ -239,22 +253,30 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Elimina una nota de la lista de notas.
+        /// Elimina una nota de la lista de notas, y lo guarda en un archivo.
         /// </summary>
         /// <param name="nota">Nota a eliminar.</param>
         public static void EliminarNota(Nota nota)
         {
             if(nota is not null)
             {
-                for(int i = 0; i < Nota.notas.Count; i++)
+                nota.EliminarNota();
+
+                Nota.GuardarNotasEnArchivo(); 
+            }
+        }
+
+        /// <summary>
+        /// Elimina una nota de la lista de notas.
+        /// </summary>
+        private void EliminarNota()
+        {
+            for (int i = 0; i < Nota.notas.Count; i++)
+            {
+                if (Nota.notas[i].IdDeNota == this.IdDeNota)
                 {
-                    if(Nota.notas[i].IdDeNota == nota.IdDeNota)
-                    {
-                        Nota.notas.RemoveAt(i);
-                        Nota.GuardarNotasEnArchivo();    
-                        
-                        break;
-                    }
+                    Nota.notas.RemoveAt(i);
+                    break;
                 }
             }
         }
