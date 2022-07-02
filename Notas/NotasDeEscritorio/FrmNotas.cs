@@ -114,7 +114,7 @@ namespace NotasDeEscritorio
         /// </summary>
         /// <param name="idNota">Id de la nota.</param>
         /// <returns>True si la nota ya esta abierta, caso contrario False.</returns>
-        private bool NotaAbierta(int idNota)
+        private bool EstaNotaAbierta(int idNota)
         {
             for (int i = this.notasAbiertas.Count -1; i >= 0; i--)
             {
@@ -127,11 +127,11 @@ namespace NotasDeEscritorio
         }
 
         /// <summary>
-        /// Carga o elimina de una lista las notas recibidas por parametro.
+        /// Carga o elimina la nota recibida por parametro, en la lista de notas abiertas.
         /// </summary>
         /// <param name="nota">Nota que se cargara a la lista.</param>
         /// <param name="eliminar">True para eliminar la nota de la lista, false para cargar la nota a la lista.</param>
-        private void NotaAbierta(FrmNuevaNota nota, bool eliminar)
+        private void ActualizarListaDeNotasAbiertas(FrmNuevaNota nota, bool eliminar)
         {
             if(nota != null)
             {
@@ -147,17 +147,16 @@ namespace NotasDeEscritorio
         }
 
         /// <summary>
-        /// Cierra una nota que ha sido eliminada
+        /// Cierra una nota.
         /// </summary>
         /// <param name="id">Id de la nota a eliminar.</param>
-        private void CerrarNota(int id)
+        private void CerrarNotaAbiertaPorIdentificador(int id)
         {
             for(int i = 0; i < this.notasAbiertas.Count; i++)
             {
                 if(this.notasAbiertas[i].Nota.IdDeNota == id && !this.notasAbiertas[i].IsDisposed)
                 {
-                    this.notasAbiertas[i].OnRefrescarDataGrid -= this.RefrescarDataGrid;
-                    this.notasAbiertas[i].Close();
+                    this.CerrarNotaAbiertaPorIndice(i);
                 }
             }
         }
@@ -169,8 +168,19 @@ namespace NotasDeEscritorio
         {
             for(int i = this.notasAbiertas.Count -1; i >= 0 ; i--)
             {
-                this.notasAbiertas[i].Close();
+                this.CerrarNotaAbiertaPorIndice(i);
             }
+        }
+
+        /// <summary>
+        /// Cierra una nota abierta por su indice.
+        /// </summary>
+        /// <param name="indice">Indice de la nota que se cerrara.</param>
+        /// <exception cref="IndexOutOfRangeException">Indice fuera de rango.</exception>
+        private void CerrarNotaAbiertaPorIndice(int indice)
+        {
+            this.notasAbiertas[indice].OnRefrescarDataGrid -= this.RefrescarDataGrid;
+            this.notasAbiertas[indice].Close();
         }
 
         /// <summary>
@@ -195,7 +205,7 @@ namespace NotasDeEscritorio
         {
             FrmNuevaNota nuevaNota = new FrmNuevaNota(nota);
             nuevaNota.OnRefrescarDataGrid += this.RefrescarDataGrid;
-            nuevaNota.OnNotaAbierta += this.NotaAbierta;
+            nuevaNota.OnNotaAbierta += this.ActualizarListaDeNotasAbiertas;
 
             nuevaNota.Show();
         }
@@ -236,7 +246,7 @@ namespace NotasDeEscritorio
                         {
                             if (nota is not null)
                             {
-                                this.CerrarNota(nota.IdDeNota);
+                                this.CerrarNotaAbiertaPorIdentificador(nota.IdDeNota);
 
                                 Nota.EliminarNota(nota);
                                 this.RefrescarDataGrid();
@@ -258,7 +268,7 @@ namespace NotasDeEscritorio
                 {
                     Nota nota = this.dtgvNotas.Rows[e.RowIndex].DataBoundItem as Nota;
 
-                    if (nota is not null && !this.NotaAbierta(nota.IdDeNota) &&
+                    if (nota is not null && !this.EstaNotaAbierta(nota.IdDeNota) &&
                         ((DataGridView)sender).Columns[e.ColumnIndex] is DataGridViewColumn)
                     {
                         this.CargarEventosYAbrirNota(nota);
@@ -353,7 +363,7 @@ namespace NotasDeEscritorio
         {
             for(int i = 0; i < Nota.Notas.Count; i++)
             {
-                if(!NotaAbierta(Nota.Notas[i].IdDeNota))
+                if(!EstaNotaAbierta(Nota.Notas[i].IdDeNota))
                 {
                     this.CargarEventosYAbrirNota(Nota.Notas[i]);
                 }
@@ -363,6 +373,8 @@ namespace NotasDeEscritorio
         private void cerrarTodasLasNotasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.CerrarTodasLasNotasAbiertas();
+
+            Nota.GuardarNotasEnArchivo();
         }
 
         private void borrarTodasLasNotasToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -374,6 +386,7 @@ namespace NotasDeEscritorio
                 if (respuesta == DialogResult.Yes)
                 {
                     this.CerrarTodasLasNotasAbiertas();
+
                     Nota.EliminarTodasLasNotas();
 
                     this.RefrescarDataGrid();

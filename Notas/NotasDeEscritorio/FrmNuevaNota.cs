@@ -69,6 +69,8 @@ namespace NotasDeEscritorio
             this.rTxtContenidoNota.BorderStyle = BorderStyle.None;
             this.lblCantidadCaracteres.BackColor = Color.Transparent;
             this.lblCantidadCaracteres.Text = this.nota.Texto.Length.ToString();
+
+            Nota.GuardarNotaEnListaDeNotas(this.nota);
         }
 
         /// <summary>
@@ -274,7 +276,7 @@ namespace NotasDeEscritorio
         {
             this.ActualizarUbicacionYTamanio();
 
-            Nota.GuardarNota(this.nota);
+            Nota.GuardarNotaEnListaDeNotasYEnArchivo(this.nota);
         }
     }
 }

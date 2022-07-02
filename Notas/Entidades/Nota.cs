@@ -208,16 +208,25 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Guarda una nota (no guarda null ni duplicados) en la lista de notas, y luego guarda todas las notas en el archivo.
+        /// </summary>
+        /// <param name="nota">Nota a guardar.</param>
+        public static void GuardarNotaEnListaDeNotasYEnArchivo(Nota nota)
+        {
+            Nota.GuardarNotaEnListaDeNotas(nota);
+            Nota.GuardarNotasEnArchivo();
+        }
+
+        /// <summary>
         /// Guarda una nota (no guarda null ni duplicados) en la lista de notas.
         /// </summary>
         /// <param name="nota">Nota a guardar.</param>
-        public static void GuardarNota(Nota nota)
+        public static void GuardarNotaEnListaDeNotas(Nota nota)
         {
-            if(nota != null && Nota.notas != nota)
+            if (nota != null && Nota.notas != nota)
             {
                 Nota.notas.Add(nota);
             }
-            Nota.GuardarNotasEnArchivo();
         }
 
         /// <summary>
