@@ -174,6 +174,20 @@ namespace NotasDeEscritorio
         }
 
         /// <summary>
+        /// Abre las notas que no se han cerrado al salir de la aplicacion la ultima vez.
+        /// </summary>
+        private void AbrirNotasActivas()
+        {
+            for(int i = 0; i < Nota.Notas.Count; i++)
+            {
+                if(Nota.Notas[i].SeGuardoNotaAbierta)
+                {
+                    this.CargarEventosYAbrirNota(Nota.Notas[i]);
+                }
+            }
+        }
+
+        /// <summary>
         /// Carga los eventos en el objeto de tipo "NuevaNota" y abre el formulario.
         /// </summary>
         /// <param name="nota">Nota a partir de la cual se abrira el formulario.</param>
@@ -201,7 +215,9 @@ namespace NotasDeEscritorio
 
             this.CargarTema();
 
-            this.Show(); 
+            this.Show();
+
+            this.AbrirNotasActivas();
         }
 
         private void dtgvNotas_CellContentClick(object sender, DataGridViewCellEventArgs e)

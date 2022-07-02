@@ -23,6 +23,7 @@ namespace Entidades
         private Dimension posicionVentanaNota;
         private ColorARGB colorFondo;
         private ColorARGB colorLetra;
+        private bool seGuardoNotaAbierta;
 
         [JsonConstructor]
         public Nota()
@@ -45,7 +46,7 @@ namespace Entidades
 
                 if (string.IsNullOrWhiteSpace(this.tituloDeNota))
                 {
-                    retorno = $"Nota sin titulo - Nota número: {this.IdDeNota}";
+                    retorno = string.Format("Nota sin titulo - Nota número: {0:D4}", this.IdDeNota);
                 }
                 return retorno;
             }            
@@ -161,6 +162,9 @@ namespace Entidades
 
         [Browsable(false)]
         public Dimension PosicionVentanaNota { get => posicionVentanaNota; set => posicionVentanaNota = value; }
+
+        [Browsable(false)]
+        public bool SeGuardoNotaAbierta { get => seGuardoNotaAbierta; set => seGuardoNotaAbierta = value; }
 
         /// <summary>
         /// Guarda las notas en un archivo .json

@@ -15,7 +15,6 @@ namespace NotasDeEscritorio
     {
         public event Action<FrmNuevaNota, bool> OnNotaAbierta;
         public event Action OnRefrescarDataGrid;
-        public event Action<int> OnNotaCerrada;
         private Nota nota;
         private Tema tema;
 
@@ -57,6 +56,7 @@ namespace NotasDeEscritorio
 
         private void NuevaNota_Load(object sender, EventArgs e)
         {
+            this.nota.SeGuardoNotaAbierta = true;
             this.MaximumSize = new Size(720, 570);
             this.MinimumSize = new Size(480, 300);
 
@@ -219,6 +219,11 @@ namespace NotasDeEscritorio
             if (cambiarTitulo.ShowDialog() == DialogResult.OK)
             {
                 this.Text = this.nota.TituloDeNota;
+
+                if(this.OnRefrescarDataGrid != null)
+                {
+                    this.OnRefrescarDataGrid.Invoke();
+                }
             }
         }
 
@@ -252,24 +257,24 @@ namespace NotasDeEscritorio
 
         private void NuevaNota_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.ActualizarUbicacionYTamanio();
-
             if (this.OnRefrescarDataGrid != null)
             {
-                Nota.GuardarNota(this.nota);
-
                 this.OnRefrescarDataGrid.Invoke();
-            }
-
-            if(this.OnNotaCerrada != null)
-            {
-                this.OnNotaCerrada.Invoke(this.nota.IdDeNota);
             }
 
             if (this.OnNotaAbierta != null)
             {
                 this.OnNotaAbierta.Invoke(this, true);
             }
+
+            this.nota.SeGuardoNotaAbierta = false;
+        }
+
+        private void FrmNuevaNota_Deactivate(object sender, EventArgs e)
+        {
+            this.ActualizarUbicacionYTamanio();
+
+            Nota.GuardarNota(this.nota);
         }
     }
 }

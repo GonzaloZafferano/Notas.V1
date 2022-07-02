@@ -125,6 +125,7 @@ namespace NotasDeEscritorio
             this.MinimumSize = new System.Drawing.Size(480, 300);
             this.Name = "FrmNuevaNota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Deactivate += new System.EventHandler(this.FrmNuevaNota_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NuevaNota_FormClosing);
             this.Load += new System.EventHandler(this.NuevaNota_Load);
             this.barraMenuStrip.ResumeLayout(false);
@@ -133,7 +134,6 @@ namespace NotasDeEscritorio
             this.barraStatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
