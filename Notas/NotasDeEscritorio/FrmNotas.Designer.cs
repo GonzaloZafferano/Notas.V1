@@ -54,6 +54,8 @@ namespace NotasDeEscritorio
             this.dtgvNotas.AllowUserToResizeColumns = false;
             this.dtgvNotas.AllowUserToResizeRows = false;
             this.dtgvNotas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvNotas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtgvNotas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dtgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvNotas.Location = new System.Drawing.Point(3, 84);
             this.dtgvNotas.MultiSelect = false;
