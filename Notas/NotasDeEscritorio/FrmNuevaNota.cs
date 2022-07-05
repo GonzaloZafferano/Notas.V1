@@ -255,6 +255,7 @@ namespace NotasDeEscritorio
         private void temaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ColorDialog opcionesDeColor = new ColorDialog();
+            opcionesDeColor.Color = this.nota.ColorFondoNota;
 
             if(opcionesDeColor.ShowDialog() == DialogResult.OK)
             {
