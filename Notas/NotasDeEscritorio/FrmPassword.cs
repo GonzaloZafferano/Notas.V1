@@ -14,14 +14,23 @@ namespace NotasDeEscritorio
     public partial class FrmPassword : Form
     {
         Tema tema;
+        bool tienePassword;
+
         public FrmPassword()
         {
             InitializeComponent();
+
             this.tema = FrmNotas.temaAplicacion;
+            this.tienePassword = !string.IsNullOrWhiteSpace(Properties.Settings.Default.Password);
         }
 
         private void FrmPassword_Load(object sender, EventArgs e)
         {
+            this.btnQuitarPassword.Visible = this.tienePassword;
+
+            this.Text = this.tienePassword ? "Menu: Modificar contraseña" : "Menu: Activar contraseña";
+            this.btnCambiarPassword.Text = this.tienePassword ? "Modificar contraseña" : "Activar contraseña";
+            
             this.BackColor = tema.ColorDeFondoAplicacion;
 
             foreach (Control control in this.Controls)

@@ -75,21 +75,21 @@ namespace NotasDeEscritorio
             // txtIngresarPassword
             // 
             this.txtIngresarPassword.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtIngresarPassword.Location = new System.Drawing.Point(315, 20);
+            this.txtIngresarPassword.Location = new System.Drawing.Point(380, 20);
             this.txtIngresarPassword.MaxLength = 10;
             this.txtIngresarPassword.Name = "txtIngresarPassword";
             this.txtIngresarPassword.PasswordChar = '*';
-            this.txtIngresarPassword.Size = new System.Drawing.Size(390, 34);
+            this.txtIngresarPassword.Size = new System.Drawing.Size(325, 34);
             this.txtIngresarPassword.TabIndex = 0;
             // 
             // txtConfirmarPassword
             // 
             this.txtConfirmarPassword.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtConfirmarPassword.Location = new System.Drawing.Point(315, 74);
+            this.txtConfirmarPassword.Location = new System.Drawing.Point(380, 74);
             this.txtConfirmarPassword.MaxLength = 10;
             this.txtConfirmarPassword.Name = "txtConfirmarPassword";
             this.txtConfirmarPassword.PasswordChar = '*';
-            this.txtConfirmarPassword.Size = new System.Drawing.Size(390, 34);
+            this.txtConfirmarPassword.Size = new System.Drawing.Size(325, 34);
             this.txtConfirmarPassword.TabIndex = 1;
             // 
             // lblIngresarPassword
@@ -97,18 +97,18 @@ namespace NotasDeEscritorio
             this.lblIngresarPassword.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblIngresarPassword.Location = new System.Drawing.Point(30, 23);
             this.lblIngresarPassword.Name = "lblIngresarPassword";
-            this.lblIngresarPassword.Size = new System.Drawing.Size(279, 39);
+            this.lblIngresarPassword.Size = new System.Drawing.Size(344, 39);
             this.lblIngresarPassword.TabIndex = 5;
-            this.lblIngresarPassword.Text = "Ingrese contraseña:";
+            this.lblIngresarPassword.Text = "Ingrese nueva contraseña:";
             // 
             // lblConfirmarPassword
             // 
             this.lblConfirmarPassword.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblConfirmarPassword.Location = new System.Drawing.Point(30, 77);
             this.lblConfirmarPassword.Name = "lblConfirmarPassword";
-            this.lblConfirmarPassword.Size = new System.Drawing.Size(279, 39);
+            this.lblConfirmarPassword.Size = new System.Drawing.Size(344, 39);
             this.lblConfirmarPassword.TabIndex = 6;
-            this.lblConfirmarPassword.Text = "Confirme contraseña:";
+            this.lblConfirmarPassword.Text = "Confirme nueva contraseña:";
             // 
             // FrmPassword
             // 
@@ -128,7 +128,6 @@ namespace NotasDeEscritorio
             this.MinimizeBox = false;
             this.Name = "FrmPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu Contraseña";
             this.Load += new System.EventHandler(this.FrmPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
