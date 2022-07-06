@@ -15,6 +15,7 @@ namespace NotasDeEscritorio
     {
         public event Action<FrmNuevaNota, bool> OnNotaAbierta;
         public event Action OnRefrescarDataGrid;
+
         private Nota nota;
         private Tema tema;
 

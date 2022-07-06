@@ -13,8 +13,8 @@ namespace NotasDeEscritorio
 {
     public partial class FrmPassword : Form
     {
-        Tema tema;
-        bool tienePassword;
+        private Tema tema;
+        private bool tienePassword;
 
         public FrmPassword()
         {

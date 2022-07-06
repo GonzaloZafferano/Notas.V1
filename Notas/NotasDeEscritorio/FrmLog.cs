@@ -13,8 +13,8 @@ namespace NotasDeEscritorio
 {
     public partial class FrmLog : Form
     {
-        Tema tema;
-        string password;
+        private Tema tema;
+        private string password;
 
         public FrmLog()
         {
@@ -32,6 +32,7 @@ namespace NotasDeEscritorio
                 if(this.txtPassword.Text == this.password)
                 {
                     this.Hide();
+
                     this.Loguear();
                 }
                 else
