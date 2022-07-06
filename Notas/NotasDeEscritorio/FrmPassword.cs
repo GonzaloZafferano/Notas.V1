@@ -72,6 +72,9 @@ namespace NotasDeEscritorio
                 {
                     Properties.Settings.Default["Password"] = this.txtConfirmarPassword.Text;
                     Properties.Settings.Default.Save();
+
+                    MessageBox.Show($"Se ha {(this.tienePassword ? "modificado" : "activado")} la contraseña con exito! Se cerrara la sesion.", $"Aviso: {(this.tienePassword ? "modificacion" : "activacion")} de contraseña exitosa.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     this.DialogResult = DialogResult.OK;
                 }
                 else
