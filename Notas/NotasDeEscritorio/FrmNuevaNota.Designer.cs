@@ -74,21 +74,21 @@ namespace NotasDeEscritorio
             this.cambiarTítuloToolStripMenuItem.Name = "cambiarTítuloToolStripMenuItem";
             this.cambiarTítuloToolStripMenuItem.Size = new System.Drawing.Size(157, 28);
             this.cambiarTítuloToolStripMenuItem.Text = "Cambiar título";
-            this.cambiarTítuloToolStripMenuItem.Click += new System.EventHandler(this.cambiarTítuloToolStripMenuItem_Click);
+            this.cambiarTítuloToolStripMenuItem.Click += new System.EventHandler(this.CambiarTítuloToolStripMenuItem_Click);
             // 
             // letraToolStripMenuItem
             // 
             this.letraToolStripMenuItem.Name = "letraToolStripMenuItem";
             this.letraToolStripMenuItem.Size = new System.Drawing.Size(209, 28);
             this.letraToolStripMenuItem.Text = "Opciones de fuente";
-            this.letraToolStripMenuItem.Click += new System.EventHandler(this.letraToolStripMenuItem_Click);
+            this.letraToolStripMenuItem.Click += new System.EventHandler(this.MostrarFuentesToolStripMenuItem_Click);
             // 
             // temaToolStripMenuItem
             // 
             this.temaToolStripMenuItem.Name = "temaToolStripMenuItem";
             this.temaToolStripMenuItem.Size = new System.Drawing.Size(75, 28);
             this.temaToolStripMenuItem.Text = "Tema";
-            this.temaToolStripMenuItem.Click += new System.EventHandler(this.temaToolStripMenuItem_Click);
+            this.temaToolStripMenuItem.Click += new System.EventHandler(this.MostrarColorToolStripMenuItem_Click);
             // 
             // barraStatusStrip
             // 

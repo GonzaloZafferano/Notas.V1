@@ -342,7 +342,7 @@ namespace NotasDeEscritorio
             this.dtgvNotas.Columns["eliminar"].DefaultCellStyle.ForeColor = tema.ColorDeLetra;
 
             this.dtgvNotas.BackgroundColor = tema.ColorDeBordeDeBoton;
-            this.dtgvNotas.RowsDefaultCellStyle.SelectionBackColor = tema.ColorDeFondoLabelYListBox;
+            this.dtgvNotas.RowsDefaultCellStyle.SelectionBackColor = tema.ColorDeFondoAplicacionAlternativo;
 
             Properties.Settings.Default["TemaAplicacion"] = tema.TemaAplicado.ToString();
             Properties.Settings.Default.Save(); 

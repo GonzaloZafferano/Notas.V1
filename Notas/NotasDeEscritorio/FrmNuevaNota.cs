@@ -113,8 +113,8 @@ namespace NotasDeEscritorio
         /// </summary>
         private void CargarTema()
         {
-            this.ColorParaResaltarControles(tema.ColorDeFondoAplicacion, -30, this.CargarColorResaltadoEnFondos);
-            this.ColorParaResaltarControles(tema.ColorDeLetra, 0, this.CargarColorResaltadoEnLetras);
+            this.ColorParaResaltarControles(this.tema.ColorDeFondoAplicacion, -30, this.CargarColorResaltadoEnFondos);
+            this.ColorParaResaltarControles(this.tema.ColorDeLetra, 0, this.CargarColorResaltadoEnLetras);
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace NotasDeEscritorio
             this.nota.ColorLetraNota = colorModificado;
         }
 
-        private void cambiarTítuloToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CambiarTítuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmCambiarTitulo cambiarTitulo = new FrmCambiarTitulo(this.nota);
 
@@ -237,10 +237,10 @@ namespace NotasDeEscritorio
             }
         }
 
-        private void letraToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MostrarFuentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FontDialog opcionesDeFuente = new FontDialog();
-
+            opcionesDeFuente.AllowScriptChange = false;
             opcionesDeFuente.ShowColor = true;
             opcionesDeFuente.Color = this.rTxtContenidoNota.ForeColor;
             opcionesDeFuente.Font = new Font(this.nota.Fuente, this.nota.TamanioFuente, this.nota.EstiloDeFuente);
@@ -253,7 +253,7 @@ namespace NotasDeEscritorio
             }
         }
 
-        private void temaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MostrarColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ColorDialog opcionesDeColor = new ColorDialog();
             opcionesDeColor.Color = this.nota.ColorFondoNota;

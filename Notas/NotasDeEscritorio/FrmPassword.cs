@@ -48,11 +48,6 @@ namespace NotasDeEscritorio
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnQuitarPassword_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default["Password"] = string.Empty;
@@ -73,7 +68,7 @@ namespace NotasDeEscritorio
                     Properties.Settings.Default["Password"] = this.txtConfirmarPassword.Text;
                     Properties.Settings.Default.Save();
 
-                    MessageBox.Show($"Se ha {(this.tienePassword ? "modificado" : "activado")} la contraseña con exito! Se cerrara la sesion.", $"Aviso: {(this.tienePassword ? "modificacion" : "activacion")} de contraseña exitosa.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Se ha {(this.tienePassword ? "modificado" : "activado")} la contraseña con exito! Se cerrara la sesion.", $"Aviso: {(this.tienePassword ? "Modificacion" : "Activacion")} de contraseña exitosa.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.DialogResult = DialogResult.OK;
                 }
@@ -86,6 +81,11 @@ namespace NotasDeEscritorio
             {
                 MessageBox.Show("Por favor, ingrese una contraseña.", "Aviso: Ingrese contraseña.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
