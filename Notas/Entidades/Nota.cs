@@ -179,7 +179,7 @@ namespace Entidades
             {
                 if(Nota.OnMensajeDeError != null)
                 {
-                    Nota.OnMensajeDeError.Invoke(ex.Message +"Ha ocurrido un error al intentar guardar cambios. Por favor reintente más tarde.");
+                    Nota.OnMensajeDeError.Invoke(ex.Message + "Ha ocurrido un error al intentar guardar cambios. Por favor reintente más tarde.");
                 }
             }
         }
@@ -200,7 +200,7 @@ namespace Entidades
             {
                 if (Nota.OnMensajeDeError != null)
                 {
-                    Nota.OnMensajeDeError.Invoke("No se encontraron notas para leer. Se creara una nueva lista de notas.");
+                    //Nota.OnMensajeDeError.Invoke("No se encontraron notas para leer.");
                 }
                 Nota.notas = new List<Nota>();
                 return false;
