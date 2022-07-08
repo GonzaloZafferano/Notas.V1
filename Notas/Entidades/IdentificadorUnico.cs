@@ -56,9 +56,9 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Obtiene un Id Unico para un empleado
+        /// Obtiene un Id Unico para una Nota
         /// </summary>
-        /// <returns>Id Unico para un empleado</returns>
+        /// <returns>Id Unico para una Nota</returns>
         /// <exception cref="Exception">Error externo.</exception>
         public int ObtenerIdUnicoParaNota()
         {
