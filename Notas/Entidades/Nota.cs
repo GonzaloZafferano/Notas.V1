@@ -187,7 +187,7 @@ namespace Entidades
         /// <summary>
         /// Lee las notas de un archivo .json
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True si pudo leer la nota y cargar la lista. False si ha ocurrido un error, por lo que se inicializo una lista vacia.</returns>
         public static bool LeerNotasDeArchivo()
         {
             try
