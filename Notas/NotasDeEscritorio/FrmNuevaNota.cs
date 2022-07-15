@@ -15,7 +15,6 @@ namespace NotasDeEscritorio
     {
         public event Action<FrmNuevaNota, bool> OnNotaAbierta;
         public event Action OnRefrescarDataGrid;
-
         private Nota nota;
         private Tema tema;
 
@@ -49,12 +48,6 @@ namespace NotasDeEscritorio
             }
         }
 
-        private void rTxtContenidoNota_TextChanged(object sender, EventArgs e)
-        {
-            this.nota.Texto = rTxtContenidoNota.Text;
-            this.lblCantidadCaracteres.Text = rTxtContenidoNota.Text.Length.ToString();
-        }
-
         private void NuevaNota_Load(object sender, EventArgs e)
         {
             this.nota.SeGuardoNotaAbierta = true;
@@ -77,6 +70,12 @@ namespace NotasDeEscritorio
             {
                 this.OnRefrescarDataGrid.Invoke();
             }
+        }
+
+        private void rTxtContenidoNota_TextChanged(object sender, EventArgs e)
+        {
+            this.nota.Texto = rTxtContenidoNota.Text;
+            this.lblCantidadCaracteres.Text = rTxtContenidoNota.Text.Length.ToString();
         }
 
         /// <summary>

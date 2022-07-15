@@ -23,6 +23,22 @@ namespace NotasDeEscritorio
             this.password = Properties.Settings.Default.Password;
         }
 
+        private void FrmLog_Load(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            this.CargarTema();
+
+            if (string.IsNullOrEmpty(this.password))
+            {
+                this.Loguear();
+            }
+            else
+            {
+                this.Show();
+            }
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             this.password = Properties.Settings.Default.Password;
@@ -44,11 +60,6 @@ namespace NotasDeEscritorio
             {
                 MessageBox.Show("Por favor, ingrese la contraseña.", "Aviso: Ingrese contraseña ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         /// <summary>
@@ -96,20 +107,9 @@ namespace NotasDeEscritorio
             }
         }
 
-        private void FrmLog_Load(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
-            this.CargarTema();
-
-            if (string.IsNullOrEmpty(this.password))
-            {
-                this.Loguear();
-            }
-            else
-            {
-                this.Show();
-            }
+            this.Close();
         }
     }
 }

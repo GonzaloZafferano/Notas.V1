@@ -24,6 +24,12 @@ namespace NotasDeEscritorio
             this.tema = FrmNotas.temaAplicacion;
         }
 
+        private void FrmCambiarTitulo_Load(object sender, EventArgs e)
+        {
+            this.lblTituloActualDeNota.Text = this.nota.TituloDeNota;
+            this.CargarTema();
+        }
+
         /// <summary>
         /// Carga el tema actual en la aplicacion.
         /// </summary>
@@ -33,22 +39,17 @@ namespace NotasDeEscritorio
 
             foreach (Control control in this.Controls)
             {
-                control.BackColor = tema.ColorDeFondoAplicacion;
-                control.ForeColor = tema.ColorDeLetra;
+                control.BackColor = this.tema.ColorDeFondoAplicacion;
+                control.ForeColor = this.tema.ColorDeLetra;
 
                 if (control is Button boton)
                 {
                     boton.FlatStyle = FlatStyle.Flat;
-                    boton.FlatAppearance.BorderColor = tema.ColorDeBordeDeBoton;
-                    boton.FlatAppearance.MouseDownBackColor = tema.ColorMouseDown;
-                    boton.FlatAppearance.MouseOverBackColor = tema.ColorMouseOver;
+                    boton.FlatAppearance.BorderColor = this.tema.ColorDeBordeDeBoton;
+                    boton.FlatAppearance.MouseDownBackColor = this.tema.ColorMouseDown;
+                    boton.FlatAppearance.MouseOverBackColor = this.tema.ColorMouseOver;
                 }
             }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -62,12 +63,11 @@ namespace NotasDeEscritorio
             {
                 MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }  
+        }
 
-        private void FrmCambiarTitulo_Load(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.lblTituloActualDeNota.Text = this.nota.TituloDeNota;
-            this.CargarTema();
+            this.Close();
         }
     }
 }

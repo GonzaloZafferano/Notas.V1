@@ -175,11 +175,11 @@ namespace Entidades
             {  
                SerializadorJSON<List<Nota>>.Guardar(Nota.rutaRelativaArchivo, notas);
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 if(Nota.OnMensajeDeError != null)
                 {
-                    Nota.OnMensajeDeError.Invoke(ex.Message + "Ha ocurrido un error al intentar guardar cambios. Por favor reintente más tarde.");
+                    Nota.OnMensajeDeError.Invoke("Ha ocurrido un error al intentar guardar cambios. Por favor reintente más tarde.");
                 }
             }
         }

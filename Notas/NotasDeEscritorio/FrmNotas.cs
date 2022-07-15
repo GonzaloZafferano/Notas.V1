@@ -40,6 +40,26 @@ namespace NotasDeEscritorio
             }
         }
 
+        private void Notas_Load(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            this.btnAgregarNota.BringToFront();
+            this.dtgvNotas.ColumnHeadersVisible = false;
+            this.dtgvNotas.RowTemplate.Height = 100;
+
+            this.PrepararBotonEliminar();
+            this.PrepararColumnaNotas();
+
+            this.RefrescarDataGrid();
+
+            this.CargarTema();
+
+            this.Show();
+
+            this.AbrirNotasActivas();
+        }
+
         /// <summary>
         /// Actualiza los datos del datagrid.
         /// </summary>
@@ -106,7 +126,7 @@ namespace NotasDeEscritorio
         /// <param name="mensaje">Mensaje a mostrar.</param>
         private void MensajeError(string mensaje)
         {
-            MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show(mensaje, "Aviso: Ha ocurrido un error.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         /// <summary>
@@ -179,8 +199,11 @@ namespace NotasDeEscritorio
         /// <exception cref="IndexOutOfRangeException">Indice fuera de rango.</exception>
         private void CerrarNotaAbiertaPorIndice(int indice)
         {
-            this.notasAbiertas[indice].OnRefrescarDataGrid -= this.RefrescarDataGrid;
-            this.notasAbiertas[indice].Close();
+            if(!this.notasAbiertas[indice].IsDisposed)
+            {
+                this.notasAbiertas[indice].OnRefrescarDataGrid -= this.RefrescarDataGrid;
+                this.notasAbiertas[indice].Close();
+            }
         }
 
         /// <summary>
@@ -208,27 +231,7 @@ namespace NotasDeEscritorio
             nuevaNota.OnNotaAbierta += this.ActualizarListaDeNotasAbiertas;
 
             nuevaNota.Show();
-        }
-
-        private void Notas_Load(object sender, EventArgs e)
-        {
-            this.Hide();                     
-
-            this.btnAgregarNota.BringToFront();
-            this.dtgvNotas.ColumnHeadersVisible = false;
-            this.dtgvNotas.RowTemplate.Height = 100;
-
-            this.PrepararBotonEliminar();
-            this.PrepararColumnaNotas();
-
-            this.RefrescarDataGrid();
-
-            this.CargarTema();
-
-            this.Show();
-
-            this.AbrirNotasActivas();
-        }
+        }           
 
         private void dtgvNotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -255,9 +258,7 @@ namespace NotasDeEscritorio
                     }
                 }
             }
-            catch (Exception)
-            {
-            }
+            catch (Exception) { }
         }
 
         private void dtgvNotas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -278,9 +279,7 @@ namespace NotasDeEscritorio
                     }
                 }
             }
-            catch(Exception)
-            {
-            }
+            catch (Exception) { }
         }
 
         private void btnAgregarNota_Click(object sender, EventArgs e)
@@ -293,15 +292,15 @@ namespace NotasDeEscritorio
         {
             if(object.ReferenceEquals(sender, this.azulToolStripMenuItem))
             {
-                tema = new Tema(Tema.Temas.Azul);
+                FrmNotas.tema = new Tema(Tema.Temas.Azul);
             }
             else if(object.ReferenceEquals(sender, this.verdeToolStripMenuItem))
             {
-                tema = new Tema(Tema.Temas.Verde);
+                FrmNotas.tema = new Tema(Tema.Temas.Verde);
             }
             else
             {
-                tema = new Tema(Tema.Temas.Rosa);
+                FrmNotas.tema = new Tema(Tema.Temas.Rosa);
             }
             this.CargarTema();            
         }
@@ -311,41 +310,70 @@ namespace NotasDeEscritorio
         /// </summary>
         private void CargarTema()
         {
-            this.BackColor = tema.ColorDeFondoAplicacion;
+            this.BackColor = FrmNotas.tema.ColorDeFondoAplicacion;
 
             foreach (Control control in this.Controls)
             {
-                control.BackColor = tema.ColorDeFondoAplicacion;
-                control.ForeColor = tema.ColorDeLetra;
+                control.BackColor = FrmNotas.tema.ColorDeFondoAplicacion;
+                control.ForeColor = FrmNotas.tema.ColorDeLetra;
 
                 if (control is Button boton)
                 {
                     boton.FlatStyle = FlatStyle.Flat;
-                    boton.FlatAppearance.BorderColor = tema.ColorDeBordeDeBoton;
-                    boton.FlatAppearance.MouseDownBackColor = tema.ColorMouseDown;
-                    boton.FlatAppearance.MouseOverBackColor = tema.ColorMouseOver;
+                    boton.FlatAppearance.BorderColor = FrmNotas.tema.ColorDeBordeDeBoton;
+                    boton.FlatAppearance.MouseDownBackColor = FrmNotas.tema.ColorMouseDown;
+                    boton.FlatAppearance.MouseOverBackColor = FrmNotas.tema.ColorMouseOver;
+                }
+                else if(control is MenuStrip menuStrip)
+                {
+                    this.AplicarTemaEnMenuStrip(menuStrip);
                 }
             }
-
-            this.abrirTodasLasNotasToolStripMenuItem.BackColor = tema.ColorDeFondoAplicacion;
-            this.abrirTodasLasNotasToolStripMenuItem.ForeColor = tema.ColorDeLetra;
-            this.cerrarTodasLasNotasToolStripMenuItem.BackColor = tema.ColorDeFondoAplicacion;
-            this.cerrarTodasLasNotasToolStripMenuItem.ForeColor = tema.ColorDeLetra; 
-            this.borrarTodasLasNotasToolStripMenuItem.BackColor = tema.ColorDeFondoAplicacion;
-            this.borrarTodasLasNotasToolStripMenuItem.ForeColor = tema.ColorDeLetra;
 
             this.CargarTemaEnDataGrid();
 
             this.botonEliminar.FlatStyle = FlatStyle.Flat;
-            this.botonEliminar.DefaultCellStyle.SelectionBackColor = tema.ColorDeBordeDeBoton;
-            this.dtgvNotas.Columns["eliminar"].DefaultCellStyle.BackColor = tema.ColorDeBordeDeBoton;
-            this.dtgvNotas.Columns["eliminar"].DefaultCellStyle.ForeColor = tema.ColorDeLetra;
+            this.botonEliminar.DefaultCellStyle.SelectionBackColor = FrmNotas.tema.ColorDeBordeDeBoton;
+            this.dtgvNotas.Columns["eliminar"].DefaultCellStyle.BackColor = FrmNotas.tema.ColorDeBordeDeBoton;
+            this.dtgvNotas.Columns["eliminar"].DefaultCellStyle.ForeColor = FrmNotas.tema.ColorDeLetra;
 
-            this.dtgvNotas.BackgroundColor = tema.ColorDeBordeDeBoton;
-            this.dtgvNotas.RowsDefaultCellStyle.SelectionBackColor = tema.ColorDeFondoAplicacionAlternativo;
+            this.dtgvNotas.BackgroundColor = FrmNotas.tema.ColorDeBordeDeBoton;
+            this.dtgvNotas.RowsDefaultCellStyle.SelectionBackColor = FrmNotas.tema.ColorDeFondoAplicacionAlternativo;
 
-            Properties.Settings.Default["TemaAplicacion"] = tema.TemaAplicado.ToString();
+            Properties.Settings.Default["TemaAplicacion"] = FrmNotas.tema.TemaAplicado.ToString();
             Properties.Settings.Default.Save(); 
+        }
+
+        /// <summary>
+        /// Aplica el tema en cada Item del MenuStrip.
+        /// </summary>
+        /// <param name="menu">Menu strip.</param>
+        private void AplicarTemaEnMenuStrip(MenuStrip menu)
+        {
+            foreach (ToolStripMenuItem menuControl in menu.Items)
+            {
+                this.AplicarTemaEnMenuStripItems(menuControl);
+            }
+        }
+
+        /// <summary>
+        /// Aplica el tema en el menuStripItem y sus subMenues.
+        /// </summary>
+        /// <param name="menu">Menu donde se aplicara el tema.</param>
+        private void AplicarTemaEnMenuStripItems(ToolStripMenuItem menu)
+        {
+            if(!object.ReferenceEquals(menu, this.rosadoToolStripMenuItem) &&
+               !object.ReferenceEquals(menu, this.azulToolStripMenuItem) &&
+               !object.ReferenceEquals(menu, this.verdeToolStripMenuItem))
+            {
+                menu.BackColor = FrmNotas.tema.ColorDeFondoAplicacion;
+                menu.ForeColor = FrmNotas.tema.ColorDeLetra;
+
+                foreach (ToolStripMenuItem subMenu in menu.DropDownItems)
+                {
+                    this.AplicarTemaEnMenuStripItems(subMenu);
+                }                
+            }
         }
 
         /// <summary>
@@ -356,31 +384,59 @@ namespace NotasDeEscritorio
         {
             for (int i = 0; i < this.dtgvNotas.Rows.Count; i++)
             {
-                this.dtgvNotas.Rows[i].DefaultCellStyle.BackColor = tema.ColorDeBordeDeBoton;
+                this.dtgvNotas.Rows[i].DefaultCellStyle.BackColor = FrmNotas.tema.ColorDeBordeDeBoton;
             }
         }
 
         #endregion
 
+        /// <summary>
+        /// Abre todas las notas que estan cerradas.
+        /// </summary>
+        /// <param name="sender">Objeto que disparo el evento.</param>
+        /// <param name="e">Objeto que contiene informacion del evento.</param>
         private void abrirTodasLasNotasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             for(int i = 0; i < Nota.Notas.Count; i++)
             {
-                if(!EstaNotaAbierta(Nota.Notas[i].IdDeNota))
+                if(!this.EstaNotaAbierta(Nota.Notas[i].IdDeNota))
                 {
                     this.CargarEventosYAbrirNota(Nota.Notas[i]);
                 }
             }
         }
 
+        /// <summary>
+        /// Refresca todas las notas: Cierra y vuelve a abrir todas las notas.
+        /// </summary>
+        /// <param name="sender">Objeto que disparo el evento.</param>
+        /// <param name="e">Objeto que contiene informacion del evento.</param>
+        private void btnRefrescarTodasLasNotas_Click(object sender, EventArgs e)
+        {
+            this.CerrarTodasLasNotasAbiertasYGuardarCambios();
+
+            for(int i = 0; i < Nota.Notas.Count; i++)
+            {
+                this.CargarEventosYAbrirNota(Nota.Notas[i]);
+            }
+        }
+
         private void cerrarTodasLasNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.CerrarTodasLasNotasAbiertasYGuardarCambios();
+        }
+
+        /// <summary>
+        /// Guarda todas las notas abiertas y guarda cambios.
+        /// </summary>
+        private void CerrarTodasLasNotasAbiertasYGuardarCambios()
         {
             this.CerrarTodasLasNotasAbiertas();
 
             Nota.GuardarNotasEnArchivo();
         }
 
-        private void borrarTodasLasNotasToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void borrarTodasLasNotasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(Nota.Notas.Count > 0)
             {

@@ -36,6 +36,7 @@ namespace NotasDeEscritorio
             this.barraMenu = new System.Windows.Forms.MenuStrip();
             this.btnNotas = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirTodasLasNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRefrescarTodasLasNotas = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarTodasLasNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarTodasLasNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.temasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +58,7 @@ namespace NotasDeEscritorio
             this.dtgvNotas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtgvNotas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dtgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvNotas.Location = new System.Drawing.Point(3, 63);
+            this.dtgvNotas.Location = new System.Drawing.Point(0, 63);
             this.dtgvNotas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgvNotas.MultiSelect = false;
             this.dtgvNotas.Name = "dtgvNotas";
@@ -66,7 +67,7 @@ namespace NotasDeEscritorio
             this.dtgvNotas.RowHeadersWidth = 51;
             this.dtgvNotas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dtgvNotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvNotas.Size = new System.Drawing.Size(513, 294);
+            this.dtgvNotas.Size = new System.Drawing.Size(516, 506);
             this.dtgvNotas.TabIndex = 4;
             this.dtgvNotas.TabStop = false;
             this.dtgvNotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvNotas_CellContentClick);
@@ -75,10 +76,10 @@ namespace NotasDeEscritorio
             // btnAgregarNota
             // 
             this.btnAgregarNota.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarNota.Location = new System.Drawing.Point(423, 26);
+            this.btnAgregarNota.Location = new System.Drawing.Point(433, 26);
             this.btnAgregarNota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarNota.Name = "btnAgregarNota";
-            this.btnAgregarNota.Size = new System.Drawing.Size(82, 32);
+            this.btnAgregarNota.Size = new System.Drawing.Size(82, 37);
             this.btnAgregarNota.TabIndex = 5;
             this.btnAgregarNota.TabStop = false;
             this.btnAgregarNota.Text = "+";
@@ -114,6 +115,7 @@ namespace NotasDeEscritorio
             // 
             this.btnNotas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.abrirTodasLasNotasToolStripMenuItem,
+            this.btnRefrescarTodasLasNotas,
             this.cerrarTodasLasNotasToolStripMenuItem,
             this.borrarTodasLasNotasToolStripMenuItem});
             this.btnNotas.Name = "btnNotas";
@@ -123,23 +125,30 @@ namespace NotasDeEscritorio
             // abrirTodasLasNotasToolStripMenuItem
             // 
             this.abrirTodasLasNotasToolStripMenuItem.Name = "abrirTodasLasNotasToolStripMenuItem";
-            this.abrirTodasLasNotasToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
+            this.abrirTodasLasNotasToolStripMenuItem.Size = new System.Drawing.Size(272, 24);
             this.abrirTodasLasNotasToolStripMenuItem.Text = "Abrir todas las notas";
             this.abrirTodasLasNotasToolStripMenuItem.Click += new System.EventHandler(this.abrirTodasLasNotasToolStripMenuItem_Click);
+            // 
+            // btnRefrescarTodasLasNotas
+            // 
+            this.btnRefrescarTodasLasNotas.Name = "btnRefrescarTodasLasNotas";
+            this.btnRefrescarTodasLasNotas.Size = new System.Drawing.Size(272, 24);
+            this.btnRefrescarTodasLasNotas.Text = "Refrescar todas las notas";
+            this.btnRefrescarTodasLasNotas.Click += new System.EventHandler(this.btnRefrescarTodasLasNotas_Click);
             // 
             // cerrarTodasLasNotasToolStripMenuItem
             // 
             this.cerrarTodasLasNotasToolStripMenuItem.Name = "cerrarTodasLasNotasToolStripMenuItem";
-            this.cerrarTodasLasNotasToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
+            this.cerrarTodasLasNotasToolStripMenuItem.Size = new System.Drawing.Size(272, 24);
             this.cerrarTodasLasNotasToolStripMenuItem.Text = "Cerrar todas las notas";
             this.cerrarTodasLasNotasToolStripMenuItem.Click += new System.EventHandler(this.cerrarTodasLasNotasToolStripMenuItem_Click);
             // 
             // borrarTodasLasNotasToolStripMenuItem
             // 
             this.borrarTodasLasNotasToolStripMenuItem.Name = "borrarTodasLasNotasToolStripMenuItem";
-            this.borrarTodasLasNotasToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
+            this.borrarTodasLasNotasToolStripMenuItem.Size = new System.Drawing.Size(272, 24);
             this.borrarTodasLasNotasToolStripMenuItem.Text = "Borrar todas las notas";
-            this.borrarTodasLasNotasToolStripMenuItem.Click += new System.EventHandler(this.borrarTodasLasNotasToolStripMenuItem1_Click);
+            this.borrarTodasLasNotasToolStripMenuItem.Click += new System.EventHandler(this.borrarTodasLasNotasToolStripMenuItem_Click);
             // 
             // temasToolStripMenuItem
             // 
@@ -189,11 +198,11 @@ namespace NotasDeEscritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 361);
-            this.Controls.Add(this.lblNotas);
+            this.ClientSize = new System.Drawing.Size(515, 575);
             this.Controls.Add(this.btnAgregarNota);
             this.Controls.Add(this.dtgvNotas);
             this.Controls.Add(this.barraMenu);
+            this.Controls.Add(this.lblNotas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.barraMenu;
@@ -225,6 +234,7 @@ namespace NotasDeEscritorio
         private System.Windows.Forms.ToolStripMenuItem cerrarTodasLasNotasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrarTodasLasNotasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem passwordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnRefrescarTodasLasNotas;
     }
 }
 

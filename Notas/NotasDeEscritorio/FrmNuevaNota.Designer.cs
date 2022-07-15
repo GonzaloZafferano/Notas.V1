@@ -46,10 +46,11 @@ namespace NotasDeEscritorio
             this.rTxtContenidoNota.BackColor = System.Drawing.Color.White;
             this.rTxtContenidoNota.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rTxtContenidoNota.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rTxtContenidoNota.Location = new System.Drawing.Point(0, 32);
-            this.rTxtContenidoNota.MinimumSize = new System.Drawing.Size(350, 200);
+            this.rTxtContenidoNota.Location = new System.Drawing.Point(0, 27);
+            this.rTxtContenidoNota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rTxtContenidoNota.MinimumSize = new System.Drawing.Size(307, 151);
             this.rTxtContenidoNota.Name = "rTxtContenidoNota";
-            this.rTxtContenidoNota.Size = new System.Drawing.Size(473, 221);
+            this.rTxtContenidoNota.Size = new System.Drawing.Size(406, 169);
             this.rTxtContenidoNota.TabIndex = 0;
             this.rTxtContenidoNota.Text = "";
             this.rTxtContenidoNota.TextChanged += new System.EventHandler(this.rTxtContenidoNota_TextChanged);
@@ -65,28 +66,29 @@ namespace NotasDeEscritorio
             this.temaToolStripMenuItem});
             this.barraMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.barraMenuStrip.Name = "barraMenuStrip";
-            this.barraMenuStrip.Size = new System.Drawing.Size(473, 32);
+            this.barraMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.barraMenuStrip.Size = new System.Drawing.Size(406, 27);
             this.barraMenuStrip.TabIndex = 1;
             this.barraMenuStrip.Text = "menuStrip1";
             // 
             // cambiarTítuloToolStripMenuItem
             // 
             this.cambiarTítuloToolStripMenuItem.Name = "cambiarTítuloToolStripMenuItem";
-            this.cambiarTítuloToolStripMenuItem.Size = new System.Drawing.Size(157, 28);
+            this.cambiarTítuloToolStripMenuItem.Size = new System.Drawing.Size(127, 23);
             this.cambiarTítuloToolStripMenuItem.Text = "Cambiar título";
             this.cambiarTítuloToolStripMenuItem.Click += new System.EventHandler(this.CambiarTítuloToolStripMenuItem_Click);
             // 
             // letraToolStripMenuItem
             // 
             this.letraToolStripMenuItem.Name = "letraToolStripMenuItem";
-            this.letraToolStripMenuItem.Size = new System.Drawing.Size(209, 28);
+            this.letraToolStripMenuItem.Size = new System.Drawing.Size(169, 23);
             this.letraToolStripMenuItem.Text = "Opciones de fuente";
             this.letraToolStripMenuItem.Click += new System.EventHandler(this.MostrarFuentesToolStripMenuItem_Click);
             // 
             // temaToolStripMenuItem
             // 
             this.temaToolStripMenuItem.Name = "temaToolStripMenuItem";
-            this.temaToolStripMenuItem.Size = new System.Drawing.Size(75, 28);
+            this.temaToolStripMenuItem.Size = new System.Drawing.Size(62, 23);
             this.temaToolStripMenuItem.Text = "Tema";
             this.temaToolStripMenuItem.Click += new System.EventHandler(this.MostrarColorToolStripMenuItem_Click);
             // 
@@ -97,32 +99,34 @@ namespace NotasDeEscritorio
             this.barraStatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.barraStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblCantidadCaracteres});
-            this.barraStatusStrip.Location = new System.Drawing.Point(0, 228);
+            this.barraStatusStrip.Location = new System.Drawing.Point(0, 174);
             this.barraStatusStrip.Name = "barraStatusStrip";
-            this.barraStatusStrip.Size = new System.Drawing.Size(473, 25);
+            this.barraStatusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
+            this.barraStatusStrip.Size = new System.Drawing.Size(406, 22);
             this.barraStatusStrip.TabIndex = 2;
             this.barraStatusStrip.Text = "statusStrip1";
             // 
             // lblCantidadCaracteres
             // 
             this.lblCantidadCaracteres.Name = "lblCantidadCaracteres";
-            this.lblCantidadCaracteres.Size = new System.Drawing.Size(18, 19);
+            this.lblCantidadCaracteres.Size = new System.Drawing.Size(15, 17);
             this.lblCantidadCaracteres.Text = "0";
             // 
             // FrmNuevaNota
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 253);
+            this.ClientSize = new System.Drawing.Size(406, 196);
             this.Controls.Add(this.barraStatusStrip);
             this.Controls.Add(this.rTxtContenidoNota);
             this.Controls.Add(this.barraMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.barraMenuStrip;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(720, 570);
+            this.MaximumSize = new System.Drawing.Size(632, 437);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(480, 300);
+            this.MinimumSize = new System.Drawing.Size(422, 235);
             this.Name = "FrmNuevaNota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Deactivate += new System.EventHandler(this.FrmNuevaNota_Deactivate);
@@ -134,6 +138,7 @@ namespace NotasDeEscritorio
             this.barraStatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
