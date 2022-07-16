@@ -50,7 +50,7 @@ namespace NotasDeEscritorio
             this.rTxtContenidoNota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rTxtContenidoNota.MinimumSize = new System.Drawing.Size(307, 151);
             this.rTxtContenidoNota.Name = "rTxtContenidoNota";
-            this.rTxtContenidoNota.Size = new System.Drawing.Size(406, 169);
+            this.rTxtContenidoNota.Size = new System.Drawing.Size(404, 169);
             this.rTxtContenidoNota.TabIndex = 0;
             this.rTxtContenidoNota.Text = "";
             this.rTxtContenidoNota.TextChanged += new System.EventHandler(this.rTxtContenidoNota_TextChanged);
@@ -67,7 +67,7 @@ namespace NotasDeEscritorio
             this.barraMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.barraMenuStrip.Name = "barraMenuStrip";
             this.barraMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.barraMenuStrip.Size = new System.Drawing.Size(406, 27);
+            this.barraMenuStrip.Size = new System.Drawing.Size(404, 27);
             this.barraMenuStrip.TabIndex = 1;
             this.barraMenuStrip.Text = "menuStrip1";
             // 
@@ -102,7 +102,7 @@ namespace NotasDeEscritorio
             this.barraStatusStrip.Location = new System.Drawing.Point(0, 174);
             this.barraStatusStrip.Name = "barraStatusStrip";
             this.barraStatusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
-            this.barraStatusStrip.Size = new System.Drawing.Size(406, 22);
+            this.barraStatusStrip.Size = new System.Drawing.Size(404, 22);
             this.barraStatusStrip.TabIndex = 2;
             this.barraStatusStrip.Text = "statusStrip1";
             // 
@@ -116,7 +116,7 @@ namespace NotasDeEscritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 196);
+            this.ClientSize = new System.Drawing.Size(404, 196);
             this.Controls.Add(this.barraStatusStrip);
             this.Controls.Add(this.rTxtContenidoNota);
             this.Controls.Add(this.barraMenuStrip);
@@ -124,9 +124,9 @@ namespace NotasDeEscritorio
             this.MainMenuStrip = this.barraMenuStrip;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(632, 437);
+            this.MaximumSize = new System.Drawing.Size(630, 435);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(422, 235);
+            this.MinimumSize = new System.Drawing.Size(420, 235);
             this.Name = "FrmNuevaNota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Deactivate += new System.EventHandler(this.FrmNuevaNota_Deactivate);

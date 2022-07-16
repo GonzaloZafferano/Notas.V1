@@ -51,8 +51,8 @@ namespace NotasDeEscritorio
         private void NuevaNota_Load(object sender, EventArgs e)
         {
             this.nota.SeGuardoNotaAbierta = true;
-            this.MaximumSize = new Size(720, 570);
-            this.MinimumSize = new Size(480, 300);
+            this.MaximumSize = new Size(630, 435);
+            this.MinimumSize = new Size(420, 235);
 
             if (this.OnNotaAbierta != null)
             {
